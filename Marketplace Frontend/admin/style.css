@@ -14,6 +14,7 @@ li {
 	list-style: none;
 }
 
+
 :root {
 	--poppins: 'Poppins', sans-serif;
 	--lato: 'Lato', sans-serif;
@@ -45,6 +46,10 @@ body {
 	background: var(--grey);
 	overflow-x: hidden;
 }
+.hidden {
+    display: none;
+}
+
 
 
 
@@ -520,6 +525,34 @@ body {
 
 
 
+/* Add any specific styles for the My Store section if needed */
+.content-section {
+    display: none;
+}
+
+.content-section:not(.hidden) {
+    display: block;
+}
+
+/* Button styles */
+.btn-download, button {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--blue);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background: var(--dark-blue); /* Add this color variable in :root if not existing */
+}
 
 
 
@@ -589,4 +622,5 @@ body {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+
 }
