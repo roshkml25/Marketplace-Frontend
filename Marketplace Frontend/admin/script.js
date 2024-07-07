@@ -28,6 +28,7 @@ menuBar.addEventListener('click', function () {
 
 
 
+
 const searchButton = document.querySelector('#content nav form .form-input button');
 const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
 const searchForm = document.querySelector('#content nav form');
@@ -74,3 +75,32 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+
+// CONTENT CHANGE 
+
+function showContent(sectionId) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => section.classList.add('hidden')); // Rename the loop variable to section
+
+    const activeSelection = document.getElementById(sectionId);
+    activeSelection.classList.remove('hidden');
+}
+
+function addProduct() {
+    const productList = document.getElementById('product-list');
+    const newRow = document.createElement('tr');
+
+    newRow.innerHTML = `
+        <td>New Product</td>
+        <td>$0</td>
+        <td><button onclick="deleteProduct(this)">Delete</button></td>
+    `;
+
+    productList.appendChild(newRow);
+}
+
+function deleteProduct(button) {
+    const row = button.parentElement.parentElement;
+    row.remove();
+}
